@@ -23,10 +23,10 @@ if (!isset($_SESSION['admin'])) {
             <a class="nav-link" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false">Orders</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" data-toggle="tab" href="#new-user" role="tab" aria-controls="new-user" aria-selected="false">Add New User</a>
+            <a class="nav-link" data-toggle="tab" href="#new-concert" role="tab" aria-controls="new-concert" aria-selected="false">Add Concert</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Profile</a>
+            <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edit Profile</a>
         </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -66,10 +66,10 @@ if (!isset($_SESSION['admin'])) {
                                 <td>'.$row["first_name"].'</td>
                                 <td>'.$row["last_name"].'</td>
                                 <td>'.$row["email"].'</td>
-                                <td>'.$row["birthday"].'</td>
+                                <td>'.date("d. M Y.", strtotime($row["birthday"])).'</td>
                                 <td>'.$row["phone"].'</td>
                                 <td>'.$admin.'</td>
-                                <td><a href="delete_user.php?id='.$row["id_user"].'"><i class="fas fa-trash"></i></a></td>
+                                <td><a href="assets/delete_user.php?id='.$row["id_user"].'"><i class="fas fa-trash"></i></a></td>
                             </tr>';
                             $count++;
                     }
@@ -80,7 +80,8 @@ if (!isset($_SESSION['admin'])) {
                 </table>
             </div>
             <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">Orders table</div>
-            <div class="tab-pane fade" id="new-user" role="tabpanel" aria-labelledby="new-user-tab">  
+            <div class="tab-pane fade" id="new-concert" role="tabpanel" aria-labelledby="new-concert-tab">  
+                    New Concert options
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Change profile settings</div>
         </div>
