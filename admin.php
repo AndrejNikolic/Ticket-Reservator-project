@@ -55,9 +55,9 @@ if (!isset($_SESSION['admin'])) {
                 
                     while($row = mysqli_fetch_assoc($result)) {
                         if ($row["admin"] == 1) {
-                            $admin = "Yes";
+                            $admin = '<a class="btn btn-danger btn-sm" href="assets/demote_admin.php?id='.$row["id_user"].'">Demote</a>';
                         } else {
-                            $admin = "No";
+                            $admin = '<a class="btn btn-success btn-sm" href="assets/promote_admin.php?id='.$row["id_user"].'">Promote</a>';
                         }
                         
                         echo '<tr>

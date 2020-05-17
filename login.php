@@ -17,27 +17,28 @@ require_once("connect.php");
     <div class="container my-5">
     <h2 class="text-center">LOGIN</h3>
     <?php
+            $username = "";
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST["name"];
+            $username = $_POST["name"];
             $pass = $_POST["pass"];
 
             $password = md5($pass);
 
-            $username = "SELECT id_user, admin FROM user WHERE username='$name' AND password='$password'";
-            $test_user = mysqli_query($con, $username);
+            $sql = "SELECT id_user, admin FROM user WHERE username='$username' AND password='$password'";
+            $test_user = mysqli_query($con, $sql);
 
-            $exc = $con->prepare($username);
+            $exc = $con->prepare($sql);
             $exc->execute();
             $exc->bind_result($id_user, $admin);
 
             if (mysqli_num_rows($test_user) == 1) {
-                $_SESSION['username'] = $name;
+                $_SESSION['username'] = $username;
                 $_SESSION['success'] = "Welcome";
 
                 while ($row = $exc->fetch()) {
                 $_SESSION['username_id'] = $id_user;
                 if ($admin == 1){
-                    $_SESSION['admin'] = "(administrator)";
+                    $_SESSION['admin'] = "administrator";
                 }
                 }
                 header('location: index.php');
@@ -53,7 +54,7 @@ require_once("connect.php");
         <form class="col-lg-3 col-md-4" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
         <div class="form-group">
             <label for="name">Username:</label>
-            <input type="text" class="form-control" name="name" required>
+            <input type="text" class="form-control" name="name" required value="<?php echo $username;?>">
         </div>
         <div class="form-group">
             <label for="pass">Password:</label>
