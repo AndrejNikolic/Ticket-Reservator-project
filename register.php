@@ -6,7 +6,6 @@ require_once("connect.php");
 <html lang="en" dir="ltr">
   <head>
     <?php include "assets/resources.php" ?>
-
     <title>Register</title>
   </head>
   <body>
@@ -14,9 +13,9 @@ require_once("connect.php");
     <div class="container my-5">
         <div class="row justify-content-center">
             <form  class="col-lg-4 col-md-5" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
-
             <?php
             $username = $fname = $lname = $email = $phone = "";
+
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $username = $_POST["username"];
                 $fname = $_POST["fname"];
@@ -26,7 +25,6 @@ require_once("connect.php");
                 $phone = $_POST["phone"];
                 $pass1 = $_POST["pass1"];
                 $pass2 = $_POST["pass2"];
-                $admin = $_POST["admin"];
 
                 $user = "SELECT * FROM user WHERE username='$username' OR email='$email'";
                 $test_user = mysqli_query($con, $user);
@@ -35,13 +33,13 @@ require_once("connect.php");
                 echo "<div class='alert alert-danger' role='alert'>ERROR: Not matching passwords!</div>";
                 }
                 else if (mysqli_num_rows($test_user)>=1) {
-                echo "<div class='alert alert-danger' role='alert'>ERROR: User already exists!</div>";
+                echo "<div class='alert alert-danger' role='alert'>ERROR: Username or email already exists!</div>";
                 }
                 else {
 
                 $password = md5($pass1);
 
-                $sql = "INSERT INTO user (username, first_name, last_name, birthday, phone, email, password, admin) VALUES ('$username', '$fname', '$lname', '$bday', '$phone', '$email', '$password', '$admin')";
+                $sql = "INSERT INTO user (username, first_name, last_name, birthday, phone, email, password) VALUES ('$username', '$fname', '$lname', '$bday', '$phone', '$email', '$password')";
                 $exc = mysqli_query($con, $sql);
 
                 if ($exc) {
@@ -60,6 +58,7 @@ require_once("connect.php");
                     }
 
                     header("location: index.php");
+                    
                 }
                 else {
                     echo "Error: " . mysqli_error($con);
@@ -68,9 +67,7 @@ require_once("connect.php");
                 }
             }
             ?>
-
                 <h3 class="text-center">REGISTER</h3>
-
                 <div class="form-group">
                     <label for="username">Username: <span class="red">*</span></label>
                     <input type="text" class="form-control" name="username" value="<?php echo $username; ?>" required>
@@ -105,19 +102,10 @@ require_once("connect.php");
                     <label for="pass2">Confirm password:</label>
                     <input type="password" class="form-control" name="pass2">
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" name="admin">
-                    <label class="form-check-label" for="admin">Admin?</label>
-                </div>
-
-                
                 <input class="btn btn-primary btn-block" type="submit" value="Register" name="register_user"/>
                 <p class="text-center">Already registered?  <a href="login.php">Sign in</a></p>
-
             </form>
         </div>
     </div>
-    
-
   </body>
 </html>
