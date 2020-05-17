@@ -10,25 +10,15 @@ require_once("connect.php");
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <?php include "assets/resources.php" ?>
 
     <title>Login</title>
   </head>
   <body>
-  <?php include "header.php" ?>
+  <?php include "assets/header.php" ?>
     <div class="container my-5">
     <h2 class="text-center">LOGIN</h3>
-    <div class="row justify-content-center">
-        
-        <form class="col-3" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
-
-        <?php
+    <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST["name"];
             $pass = $_POST["pass"];
@@ -55,13 +45,14 @@ require_once("connect.php");
                 header('location: index.php');
             }
             else {
-                echo "<div class='alert alert-danger' role='alert'>ERROR: Username or password is wrong!</div>";
+                echo "<div class='col-lg-4 offset-lg-4 col-md-6 offset-md-3  alert alert-danger' role='alert'>ERROR: Username or password is wrong!</div>";
             }
             }
 
             mysqli_close($con);
         ?>
-
+    <div class="row justify-content-center">
+        <form class="col-lg-3 col-md-4" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
         <div class="form-group">
             <label for="name">Username:</label>
             <input type="text" class="form-control" name="name" required>
