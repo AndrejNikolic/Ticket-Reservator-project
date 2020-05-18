@@ -13,7 +13,7 @@ if (isset($_SESSION['admin'])){
 
   mysqli_close($con);
 
-  header("Location: ../admin.php");
+  header("Location: ../admin_users.php");
 } else {
   echo "You don't have administrator privileges";
 }

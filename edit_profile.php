@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once("connect.php");
+
+$_SESSION['page']="edit-profile";
 $idItem = $_GET["id"];
 ?>
 
@@ -13,6 +15,7 @@ $idItem = $_GET["id"];
 <body>
 <?php include "assets/header.php" ?>
 <div class="container my-5">
+<?php if (isset($_SESSION['admin'])) { include "admin_navigation.php"; } ?>
 <div class="row justify-content-center">
 <?php
 

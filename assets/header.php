@@ -24,8 +24,7 @@ if (isset($_GET['logout'])) {
 	<div class="text-right">
 	<?php  
 		if(isset($_SESSION['username'])){
-			echo "Welcome, " . $_SESSION['username'];
-			echo '';
+			echo "<span>Welcome, " . $_SESSION['username']."</span>";
 		} else {
 			echo '<a class="btn btn-success btn-sm" href="login.php" role="button">Login / Register</a>';
 		}
@@ -47,14 +46,14 @@ if (isset($_GET['logout'])) {
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav m-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="index.php">Home</a>
+				<li class="nav-item">
+					<a class="nav-link <?php if($_SESSION['page']=="index"){ echo "active"; }?>" href="index.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="concerts.php">Concerts</a>
+					<a class="nav-link <?php if($_SESSION['page']=="concerts"){ echo "active"; }?>" href="concerts.php">Concerts</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="contact.php">Contact</a>
+					<a class="nav-link <?php if($_SESSION['page']=="contact"){ echo "active"; }?>" href="contact.php">Contact</a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">

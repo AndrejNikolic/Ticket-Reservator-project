@@ -13,6 +13,10 @@ $breakpoint-tablet: 768px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        span {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 18px;
+        }
     }
 }
 
