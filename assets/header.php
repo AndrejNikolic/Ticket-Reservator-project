@@ -13,7 +13,15 @@ if (isset($_GET['logout'])) {
 }
 ?>
 <div class="top-bar bg-light">
-	<div class="container text-right">
+<div class="container top-bar_items">
+	<div>
+		<?php
+		if(isset($_SESSION['admin'])) {
+			echo '<a class="btn btn-success btn-sm mr-2 text-left" href="admin.php" role="button">Admin Panel</a>';	
+		}
+		?>
+	</div>
+	<div class="text-right">
 	<?php  
 		if(isset($_SESSION['username'])){
 			echo "Welcome, " . $_SESSION['username'];
@@ -21,10 +29,7 @@ if (isset($_GET['logout'])) {
 		} else {
 			echo '<a class="btn btn-success btn-sm" href="login.php" role="button">Login / Register</a>';
 		}
-		if(isset($_SESSION['admin'])) {
-			echo '<a class="btn btn-success btn-sm ml-2" href="admin.php" role="button">Admin Panel</a>';
-			
-		}
+		
 	?>
 	<?php  if(isset($_SESSION['username'])) : ?>
 		<a class="btn btn-success btn-sm ml-2" href="edit_profile.php?id=<?php echo $_SESSION['username_id'] ?>" role="button">EDIT</a>
@@ -32,7 +37,7 @@ if (isset($_GET['logout'])) {
 	<?php endif ?>
 	</div>
 </div>
-
+</div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.php"><img src="img/logo5.png" alt=""><span class="logo-name">Ticket<br>Reservator</span></a>

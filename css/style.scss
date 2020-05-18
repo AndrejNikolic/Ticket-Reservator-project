@@ -1,7 +1,19 @@
+$breakpoint-tablet: 768px;
+
+/* Bootstrap fixes */
+.table th, .table td {
+    vertical-align: middle;
+}
+
 /* HEADER */
 
 .top-bar {
     padding: 5px;
+    .top-bar_items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .navbar {
@@ -37,6 +49,19 @@
             }
         }
     }
+}
+
+/* Admin Panel */
+
+
+#users.tab-pane {
+    
+    @media screen and (max-width: $breakpoint-tablet){
+        overflow-x: scroll;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
 }
 
 /* MAIN */
