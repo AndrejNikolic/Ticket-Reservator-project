@@ -60,7 +60,7 @@ require_once("connect.php");
             <label for="pass">Password:</label>
             <input type="password" class="form-control" name="pass" required>
         </div>
-            <input class="btn btn-primary btn-block" type="submit" value="Login" name="login_user"/>
+            <input class="btn btn-primary btn-block" type="submit" value="LOGIN" name="login_user"/>
             <p class="text-center">Not yet a member? <a href="register.php">Sign up</a></p>
         </form>
         </div>

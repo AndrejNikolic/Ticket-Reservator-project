@@ -17,22 +17,25 @@ if (isset($_GET['logout'])) {
 	<?php  
 		if(isset($_SESSION['username'])){
 			echo "Welcome, " . $_SESSION['username'];
+			echo '';
 		} else {
 			echo '<a class="btn btn-success btn-sm" href="login.php" role="button">Login / Register</a>';
 		}
 		if(isset($_SESSION['admin'])) {
 			echo '<a class="btn btn-success btn-sm ml-2" href="admin.php" role="button">Admin Panel</a>';
+			
 		}
 	?>
 	<?php  if(isset($_SESSION['username'])) : ?>
-		<a class="btn btn-danger btn-sm ml-2" href="index.php?logout='1'">LOGOUT</a>
+		<a class="btn btn-success btn-sm ml-2" href="edit_profile.php?id=<?php echo $_SESSION['username_id'] ?>" role="button">EDIT</a>
+		<a class="btn btn-danger btn-sm ml-2" href="index.php?logout=1">LOGOUT</a>
 	<?php endif ?>
 	</div>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="img/logo4.png" alt=""> Reservator</a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo5.png" alt=""><span class="logo-name">Ticket<br>Reservator</span></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>

@@ -25,9 +25,6 @@ if (!isset($_SESSION['admin'])) {
         <li class="nav-item" role="presentation">
             <a class="nav-link" data-toggle="tab" href="#new-concert" role="tab" aria-controls="new-concert" aria-selected="false">Add Concert</a>
         </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edit Profile</a>
-        </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="users" role="tabpanel" aria-labelledby="users-tab">
@@ -83,7 +80,6 @@ if (!isset($_SESSION['admin'])) {
             <div class="tab-pane fade" id="new-concert" role="tabpanel" aria-labelledby="new-concert-tab">  
                     New Concert options
             </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Change profile settings</div>
         </div>
     </div>
 </body>

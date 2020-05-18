@@ -99,10 +99,10 @@ require_once("connect.php");
                     <input type="password" class="form-control" name="pass1" required>
                 </div>
                 <div class="form-group">
-                    <label for="pass2">Confirm password:</label>
+                    <label for="pass2">Confirm Password:</label>
                     <input type="password" class="form-control" name="pass2">
                 </div>
-                <input class="btn btn-primary btn-block" type="submit" value="Register" name="register_user"/>
+                <input class="btn btn-primary btn-block" type="submit" value="REGISTER" name="register_user"/>
                 <p class="text-center">Already registered?  <a href="login.php">Sign in</a></p>
             </form>
         </div>
