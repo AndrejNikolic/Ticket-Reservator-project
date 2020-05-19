@@ -4,6 +4,29 @@ $breakpoint-tablet: 768px;
 .table th, .table td {
     vertical-align: middle;
 }
+.card {
+    .card-img-top {
+        border-radius: 0;
+    }
+    h4, h5 {
+        margin: 0;
+    }
+    .card-body {
+        &.concert_datetime {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+    .card-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}
+
 
 /* HEADER */
 

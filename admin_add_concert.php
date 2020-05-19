@@ -15,8 +15,6 @@ $_SESSION['page']="add-concert";
     <?php include "assets/header.php" ?>
     <div class="container my-5">
         <?php include "admin_navigation.php" ?>
-        <form class="" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-
         <?php
         $title = $description = $num_ticket = $price_ticket = $num_vip = $price_vip = $start_date = "";
         $image = "";
@@ -28,8 +26,12 @@ $_SESSION['page']="add-concert";
             $price_ticket = $_POST["price_ticket"];
             $num_vip = $_POST["num_vip"];
             $price_vip = $_POST["price_vip"];
+            $image = addslashes(file_get_contents($_FILES['imageFile']['tmp_name']));
 
-            $image = $_POST["image"];
+            if ($image == "") {
+                $image = addslashes(file_get_contents("img/no_image.png"));
+            }
+
             $start_date = $_POST["start_date"];
 
             $sql = "INSERT INTO concert (title, description, num_ticket, price_ticket, num_vip, price_vip, image, start_date) 
@@ -37,19 +39,21 @@ $_SESSION['page']="add-concert";
             $exc = mysqli_query($con, $sql);
         
             if ($exc) {
-                echo "Concert successfully added!";
+                header("location: concerts.php");
             }
             else {
                 echo "Error: " . mysqli_error($con);
             }
+
+            mysqli_close($con);
         }
         ?>
-
+        <form class="" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="col-md-3 concert_image">
                     <label for="imageFile">Image</label>
                     <div class="form-group custom-file">
-                        <input type="file" class="custom-file-input" id="imageFile" name="image" onchange="readURL(this);">
+                        <input type="file" class="custom-file-input"  id="imageFile" name="imageFile" onchange="readURL(this);">
                         <label class="custom-file-label" for="imageFile">Choose Image</label>
                     </div>
                     <img id="imageView" src="img/no_image.png" class="my-2" alt="">
@@ -79,7 +83,7 @@ $_SESSION['page']="add-concert";
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="price_ticket">Price of Tickets <span class="red">*</span></label>
-                        <input type="number" class="form-control" name="price_ticket" value="<?php echo $price_ticket; ?>" required>
+                        <input type="number" step="0.01" class="form-control" name="price_ticket" value="<?php echo $price_ticket; ?>" required>
                     </div>
                 </div>
             </div>
@@ -93,14 +97,14 @@ $_SESSION['page']="add-concert";
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="price_vip">Price of VIP Tickets <span class="red">*</span></label>
-                        <input type="number" class="form-control" name="price_vip" value="<?php echo $price_vip; ?>" required>
+                        <input type="number" step="0.01" class="form-control" name="price_vip" value="<?php echo $price_vip; ?>" required>
                     </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6 offset-md-3">
                     <div class="form-group">
-                    <input class="btn btn-primary btn-block" type="submit" value="CREATE CONCERT" name="create_concert"/>
+                    <input id="add_concert" class="btn btn-primary btn-block" type="submit" value="CREATE CONCERT" name="create_concert"/>
                     </div>
                 </div>
             </div>

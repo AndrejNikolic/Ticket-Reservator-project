@@ -1,15 +1,22 @@
 function readURL(input) {
     if (input.files && input.files[0]) {
-      var reader = new FileReader();
+    var reader = new FileReader();
       
-      reader.onload = function(e) {
+    reader.onload = function(e) {
         $('#imageView').attr('src', e.target.result);
-      }
-      
-      reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
-  }
-  
-  $("#imageFile").change(function() {
+      
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+}
+
+$("#imageFile").change(function() {
     readURL(this);
-  });
+});
+
+$(document).ready(function(){
+    $('#add_concert').click(function(){
+        
+    })
+})
+  
