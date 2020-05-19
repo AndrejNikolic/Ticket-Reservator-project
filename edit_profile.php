@@ -10,7 +10,7 @@ $idItem = $_GET["id"];
 <html lang="en">
 <head>
     <?php include "assets/resources.php" ?>
-    <title>Edit Your Profile</title>
+    <title>Edit Your Profile<?php if (isset($_SESSION['admin'])) { echo " - Admin"; } ?></title>
 </head>
 <body>
 <?php include "assets/header.php" ?>

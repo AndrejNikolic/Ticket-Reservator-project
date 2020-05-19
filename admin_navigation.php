@@ -1,6 +1,9 @@
 <ul class="nav nav-pills nav-justified">
     <li class="nav-item">
-        <a class="nav-link <?php if($_SESSION['page']=="admin"){ echo "active"; }?>" href="admin.php">Admin</a>
+        <a class="nav-link <?php if($_SESSION['page']=="admin"){ echo "active"; }?>" href="admin.php">Orders</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link <?php if($_SESSION['page']=="add-concert"){ echo "active"; }?>" href="admin_add_concert.php">Add Concert</a>
     </li>
     <li class="nav-item">
         <a class="nav-link <?php if($_SESSION['page']=="users"){ echo "active"; }?>" href="admin_users.php">All Users</a>

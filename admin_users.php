@@ -9,7 +9,7 @@ $_SESSION['page']="users";
 <html lang="en">
 <head>
     <?php include "assets/resources.php" ?>
-    <title>Admin - Users</title>
+    <title>Users - Admin</title>
 </head>
 <body>
 <?php include "assets/header.php" ?>

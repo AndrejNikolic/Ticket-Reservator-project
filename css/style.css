@@ -80,4 +80,9 @@
 .red {
   color: #ff0018;
 }
+
+/* Concert */
+.concert_image img {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
