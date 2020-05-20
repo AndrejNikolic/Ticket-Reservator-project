@@ -1,4 +1,7 @@
 $breakpoint-tablet: 768px;
+$main-color: #007aff;
+$success-color: #28a745;
+$warning-color: #dc3545;
 
 /* Bootstrap fixes */
 .table th, .table td {
@@ -24,6 +27,27 @@ $breakpoint-tablet: 768px;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+    }
+    .list-group {
+        .list-group-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .price {
+                font-size: 20px;
+                font-weight: 600;
+                color: $main-color;
+            }
+            &.vip .price {
+                color: $success-color;
+            }
+        }
+    }
+    .admin_concert-edit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
     }
 }
 

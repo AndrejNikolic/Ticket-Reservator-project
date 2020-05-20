@@ -30,6 +30,41 @@
   -webkit-box-orient: vertical;
 }
 
+.card .list-group .list-group-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .list-group .list-group-item .price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #007aff;
+}
+
+.card .list-group .list-group-item.vip .price {
+  color: #28a745;
+}
+
+.card .admin_concert-edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
 /* HEADER */
 .top-bar {
   padding: 5px;

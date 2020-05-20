@@ -30,14 +30,23 @@ $_SESSION['page']="concerts";
                                 <h5>'.date("H:m", strtotime($row['start_date'])).'</h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">'.date("d. M Y.", strtotime($row['start_date'])).'</li>
-                                <li class="list-group-item">TIME: '.date("H:m", strtotime($row['start_date'])).'</li>
+                                <li class="list-group-item"><span class="price">$'.$row['price_ticket'].'</span><span> '.$row['num_ticket'].' tickets</span></li>
+                                <li class="list-group-item vip"><span class="price">$'.$row['price_vip'].' VIP</span><span> '.$row['num_vip'].' tickets</span></li>
                                 <li class="list-group-item"><p class="card-text">'. $row['description'] .'</p></li>
                             </ul>
                             <div class="card-body text-center">
                             <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary">RESERVE TICKETS</a>
+                            </div>';
+                if (isset($_SESSION['admin'])) {
+                    echo '<div class="card-body admin_concert-edit">
+                            <h5>Administrator:</h5>
+                            <div>
+                                <a href="concert_edit.php?id='. $row['id_concert'] .'" class="btn btn-success btn-sm">EDIT</a>
+                                <a href="concert_delete.php?id='. $row['id_concert'] .'" class="btn btn-danger btn-sm">DELETE</a>
                             </div>
                         </div>';
+                }
+                echo    '</div>';
             }
         ?>
         </div>
