@@ -45,11 +45,11 @@
 .card .list-group .list-group-item .price {
   font-size: 20px;
   font-weight: 600;
-  color: #007aff;
+  color: #225FA4;
 }
 
 .card .list-group .list-group-item.vip .price {
-  color: #28a745;
+  color: #17a2b8;
 }
 
 .card .admin_concert-edit {
@@ -63,6 +63,32 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.navbar-nav .nav-link.active {
+  text-shadow: 1px 1px 5px #000;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #17a2b8;
+}
+
+a {
+  color: #17a2b8;
+}
+
+a:hover {
+  color: #0fb9d6;
+}
+
+.btn-primary {
+  background-color: #225FA4;
+  border-color: #225FA4;
+}
+
+.btn-primary:hover {
+  background-color: #224b79;
+  border-color: #224b79;
 }
 
 /* HEADER */

@@ -15,7 +15,7 @@ if (isset($_SESSION['admin'])){
 
   header("Location: ../admin_users.php");
 } else {
-  echo "You don't have administrator privileges";
+  echo "You don't have administrator privileges! <a href='../index.php'>GO HOME</a>";
 }
 
 ?>

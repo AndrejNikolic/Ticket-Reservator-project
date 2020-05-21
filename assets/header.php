@@ -17,7 +17,7 @@ if (isset($_GET['logout'])) {
 	<div>
 		<?php
 		if(isset($_SESSION['admin'])) {
-			echo '<a class="btn btn-success btn-sm mr-2 text-left" href="admin.php" role="button">Admin Panel</a>';	
+			echo '<a class="btn btn-info btn-sm mr-2 text-left" href="admin.php" role="button">Admin Panel</a>';	
 		}
 		?>
 	</div>
@@ -26,12 +26,12 @@ if (isset($_GET['logout'])) {
 		if(isset($_SESSION['username'])){
 			echo "<span>Welcome, " . $_SESSION['username']."</span>";
 		} else {
-			echo '<a class="btn btn-success btn-sm" href="login.php" role="button">Login / Register</a>';
+			echo '<a class="btn btn-info btn-sm" href="login.php" role="button">Login / Register</a>';
 		}
 		
 	?>
 	<?php  if(isset($_SESSION['username'])) : ?>
-		<a class="btn btn-success btn-sm ml-2" href="edit_profile.php?id=<?php echo $_SESSION['username_id'] ?>" role="button">EDIT</a>
+		<a class="btn btn-info btn-sm ml-2" href="edit_profile.php?id=<?php echo $_SESSION['username_id'] ?>" role="button">EDIT</a>
 		<a class="btn btn-danger btn-sm ml-2" href="index.php?logout=1">LOGOUT</a>
 	<?php endif ?>
 	</div>

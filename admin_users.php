@@ -41,7 +41,7 @@ $_SESSION['page']="users";
                     if ($row["admin"] == 1) {
                         $admin = '<a class="btn btn-danger btn-sm" href="assets/demote_admin.php?id='.$row["id_user"].'">Demote</a>';
                     } else {
-                            $admin = '<a class="btn btn-success btn-sm" href="assets/promote_admin.php?id='.$row["id_user"].'">Promote</a>';
+                            $admin = '<a class="btn btn-info btn-sm" href="assets/promote_admin.php?id='.$row["id_user"].'">Promote</a>';
                     }
                         
                     echo '<tr>

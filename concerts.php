@@ -41,7 +41,7 @@ $_SESSION['page']="concerts";
                     echo '<div class="card-body admin_concert-edit">
                             <h5>Administrator:</h5>
                             <div>
-                                <a href="concert_edit.php?id='. $row['id_concert'] .'" class="btn btn-success btn-sm">EDIT</a>
+                                <a href="edit_concert.php?id='. $row['id_concert'] .'" class="btn btn-info btn-sm">EDIT</a>
                                 <a href="assets/delete_concert.php?id='. $row['id_concert'] .'" class="btn btn-danger btn-sm">DELETE</a>
                             </div>
                         </div>';

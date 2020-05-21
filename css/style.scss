@@ -1,6 +1,6 @@
 $breakpoint-tablet: 768px;
-$main-color: #007aff;
-$success-color: #28a745;
+$main-color: #225FA4;
+$success-color: #17a2b8;
 $warning-color: #dc3545;
 
 /* Bootstrap fixes */
@@ -48,6 +48,38 @@ $warning-color: #dc3545;
         align-items: center;
         justify-content: space-between;
         border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}
+
+.navbar-nav {
+    .nav-link {
+        &.active {
+            text-shadow: 1px 1px 5px #000;
+        }
+    }
+}
+
+.nav-pills {
+    .nav-link {
+        &.active {
+            background-color: #17a2b8;
+        }
+    }
+}
+
+a {
+    color: #17a2b8;
+    &:hover {
+        color: #0fb9d6;
+    }
+}
+
+.btn-primary {
+    background-color: #225FA4;
+    border-color: #225FA4;
+    &:hover {
+        background-color: #224b79;
+        border-color: #224b79;
     }
 }
 
