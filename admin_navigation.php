@@ -1,4 +1,4 @@
-<ul class="nav nav-pills nav-justified">
+<ul class="nav nav-pills">
     <li class="nav-item">
         <a class="nav-link <?php if($_SESSION['page']=="admin"){ echo "active"; }?>" href="admin.php">Orders</a>
     </li>

@@ -21,7 +21,7 @@
         if($exc = mysqli_query($con, $sql_search)) {
             while ($row = mysqli_fetch_assoc($exc)) {
               echo '<li class="media my-4">
-                        <img src="data:image/jpeg;base64,'.base64_encode( $row["image"] ).'" class="mr-3">
+                        <img src="data:image/jpeg;base64,'.base64_encode( $row["image"] ).'" class="align-self-center mr-3">
                         <div class="row media-body">
                             <div class="col-md-8"><h5 class="mt-0 mb-1">'.$row["title"].' ( '.date("d. M Y. H:m", strtotime($row['start_date'])).' )</h5><span class="desc">'.$row["description"].'</span></div>
                             <div class="col-md-2 prices"><span>$'.$row["price_ticket"].'</span><span>VIP $'.$row["price_vip"].'</span></div>

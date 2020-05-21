@@ -14,7 +14,7 @@ $idItem = $_GET["id"];
 <body>
 <?php include "assets/header.php" ?>
 <div class="container my-5">
-<h3 class="text-center">Edit Concert</h3>
+<h3>Edit Concert</h3>
 <div class="row justify-content-center">
 <?php
 
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($con);
 }
 ?>
-<form class="" method="post" enctype="multipart/form-data">
+<form class="col-12" method="post" enctype="multipart/form-data">
     <div class="form-row">
         <div class="col-md-3 concert_image">
             <label for="imageFile">Image</label>

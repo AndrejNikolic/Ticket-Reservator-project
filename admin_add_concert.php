@@ -3,6 +3,10 @@ session_start();
 require_once("connect.php");
 
 $_SESSION['page']="add-concert";
+
+if (!isset($_SESSION['admin'])) {
+    header("location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +18,8 @@ $_SESSION['page']="add-concert";
 <body>
     <?php include "assets/header.php" ?>
     <div class="container my-5">
-        <?php include "admin_navigation.php" ?>
-        <?php
-        $title = $description = $num_ticket = $price_ticket = $num_vip = $price_vip = $start_date = "";
+    <?php include "admin_navigation.php"; ?>
+    <?php $title = $description = $num_ticket = $price_ticket = $num_vip = $price_vip = $start_date = "";
         $image = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -48,7 +51,7 @@ $_SESSION['page']="add-concert";
             mysqli_close($con);
         }
         ?>
-        <form class="" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
+        <form class="col-12" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="col-md-3 concert_image">
                     <label for="imageFile">Image</label>

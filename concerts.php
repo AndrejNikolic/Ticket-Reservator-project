@@ -24,31 +24,31 @@ $_SESSION['page']="concerts";
                 if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
                     echo ' disabled';
                 }
-                echo '">
                 
-                            <div class="card-header">
-                                <h4 class="card-title text-center">'. $row['title'] .'</h4>
-                            </div>
-                            <img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" class="card-img-top" alt="...">
-                            
-                            <div class="card-body concert_datetime">
-                                <h5>'.date("d. M Y.", strtotime($row['start_date'])).'</h5>/
-                                <h5>'.date("H:m", strtotime($row['start_date'])).'</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><span class="price">$'.$row['price_ticket'].'</span><span> '.$row['num_ticket'].' tickets</span></li>
-                                <li class="list-group-item vip"><span class="price">$'.$row['price_vip'].' VIP</span><span> '.$row['num_vip'].' tickets</span></li>
-                                <li class="list-group-item"><p class="card-text">'. $row['description'] .'</p></li>
-                            </ul>
-                            <div class="card-body text-center">
-                            <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block';
-                            
-                            if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
-                                echo ' disabled';
-                            }
+                echo '">
+                <div class="card-header">
+                    <h4 class="card-title text-center">'. $row['title'] .'</h4>
+                </div>
+                <img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" class="card-img-top" alt="...">
+                
+                <div class="card-body concert_datetime">
+                    <h5>'.date("d. M Y.", strtotime($row['start_date'])).'</h5>/
+                    <h5>'.date("H:m", strtotime($row['start_date'])).'</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="price">$'.$row['price_ticket'].'</span><span> '.$row['num_ticket'].' tickets</span></li>
+                    <li class="list-group-item vip"><span class="price">$'.$row['price_vip'].' VIP</span><span> '.$row['num_vip'].' tickets</span></li>
+                    <li class="list-group-item"><p class="card-text">'. $row['description'] .'</p></li>
+                </ul>
+                <div class="card-body text-center">
+                <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block';
+                
+                if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
+                    echo ' disabled';
+                }
 
-                            echo '">RESERVE TICKETS</a>
-                            </div>';
+                echo '">RESERVE TICKETS</a>
+                </div>';
                 if (isset($_SESSION['admin'])) {
                     echo '<div class="card-body admin_concert-edit">
                             <h5>Administrator:</h5>
