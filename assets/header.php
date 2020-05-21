@@ -11,6 +11,9 @@ if (isset($_GET['logout'])) {
   unset($_SESSION['admin']);
   header("location: index.php");
 }
+if (isset($_POST['search'])) {
+	$_SESSION['search_term'] = $_POST['search'];
+}
 ?>
 <div class="top-bar bg-light">
 <div class="container top-bar_items">
@@ -56,8 +59,8 @@ if (isset($_GET['logout'])) {
 					<a class="nav-link <?php if($_SESSION['page']=="contact"){ echo "active"; }?>" href="contact.php">Contact</a>
 				</li>
 			</ul>
-			<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
+			<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search concerts..." aria-label="Search">
 			<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>

@@ -83,6 +83,29 @@ a {
     }
 }
 
+.media {
+    img {
+        max-width: 130px;
+    }
+    .media-body {
+        .prices {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
 
 /* HEADER */
 
