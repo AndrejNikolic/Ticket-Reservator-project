@@ -15,11 +15,17 @@ $_SESSION['page']="concerts";
     <div class="container my-5">
         <div class="card-columns">
         <?php 
-            $sql = "SELECT * FROM concert";
+            $sql = "SELECT * FROM concert ORDER BY start_date ASC";
             $result = mysqli_query($con, $sql);
 
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="card">
+                echo '<div class="card';
+
+                if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
+                    echo ' disabled';
+                }
+                echo '">
+                
                             <div class="card-header">
                                 <h4 class="card-title text-center">'. $row['title'] .'</h4>
                             </div>
@@ -35,7 +41,13 @@ $_SESSION['page']="concerts";
                                 <li class="list-group-item"><p class="card-text">'. $row['description'] .'</p></li>
                             </ul>
                             <div class="card-body text-center">
-                            <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block">RESERVE TICKETS</a>
+                            <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block';
+                            
+                            if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
+                                echo ' disabled';
+                            }
+
+                            echo '">RESERVE TICKETS</a>
                             </div>';
                 if (isset($_SESSION['admin'])) {
                     echo '<div class="card-body admin_concert-edit">
