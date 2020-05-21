@@ -35,14 +35,14 @@ $_SESSION['page']="concerts";
                                 <li class="list-group-item"><p class="card-text">'. $row['description'] .'</p></li>
                             </ul>
                             <div class="card-body text-center">
-                            <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary">RESERVE TICKETS</a>
+                            <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block">RESERVE TICKETS</a>
                             </div>';
                 if (isset($_SESSION['admin'])) {
                     echo '<div class="card-body admin_concert-edit">
                             <h5>Administrator:</h5>
                             <div>
                                 <a href="concert_edit.php?id='. $row['id_concert'] .'" class="btn btn-success btn-sm">EDIT</a>
-                                <a href="concert_delete.php?id='. $row['id_concert'] .'" class="btn btn-danger btn-sm">DELETE</a>
+                                <a href="assets/delete_concert.php?id='. $row['id_concert'] .'" class="btn btn-danger btn-sm">DELETE</a>
                             </div>
                         </div>';
                 }
