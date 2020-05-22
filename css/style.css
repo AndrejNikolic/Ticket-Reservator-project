@@ -3,6 +3,10 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .container.my-5 h3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,6 +31,88 @@ body {
   width: 50%;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.container.my-5 h3.h3_fix {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0;
+  font-size: 1.60rem;
+}
+
+.container.my-5 h3.h3_fix::after {
+  border-top: none;
+  margin-top: 0;
+}
+
+.container.my-5.concert h1 {
+  margin-bottom: 2rem;
+}
+
+.order-ticket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid rgba(52, 58, 64, 0.4);
+  padding: 20px;
+  margin: 0 5%;
+  border-radius: 10px;
+}
+
+.order-ticket.vip {
+  -webkit-box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.order-ticket.vip h4, .order-ticket.vip .price {
+  color: #d3a13b;
+  font-weight: 600;
+}
+
+.order-ticket .price {
+  margin: 0;
+}
+
+.order-ticket .ticket_quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0 15px;
+  margin: 15px 0;
+  width: 100%;
+  border-top: 1px solid rgba(52, 58, 64, 0.4);
+  border-bottom: 1px solid rgba(52, 58, 64, 0.4);
+}
+
+.order-ticket .btn-group .qty, .order-ticket .btn-group .qty-vip {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #6c757d;
+  border-bottom: 1px solid #6c757d;
+}
+
+.order-ticket .btn-group .qty::-webkit-outer-spin-button, .order-ticket .btn-group .qty::-webkit-inner-spin-button, .order-ticket .btn-group .qty[type=number], .order-ticket .btn-group .qty-vip::-webkit-outer-spin-button, .order-ticket .btn-group .qty-vip::-webkit-inner-spin-button, .order-ticket .btn-group .qty-vip[type=number] {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
 }
 
 .table th, .table td {
@@ -130,7 +216,7 @@ a:hover {
   border-color: #225FA4;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:not(.disabled):active, .btn-primary.disabled {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:not(.disabled):active, .btn-primary.disabled, .btn-primary:not(:disabled):not(.disabled):active {
   background-color: #224b79;
   border-color: #224b79;
 }
