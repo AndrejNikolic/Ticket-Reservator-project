@@ -20,6 +20,9 @@ if (isset($_SESSION['admin'])){
   elseif ($command == "del-user") {
     $sql = "DELETE FROM user WHERE id_user = ?";
   }
+  elseif ($command == "del-order") {
+    $sql = "DELETE FROM ticket WHERE id_ticket = ?";
+  }
 
   $exc = $con->prepare($sql);
   $exc->bind_param("i", $idItem);
@@ -40,6 +43,9 @@ if (isset($_SESSION['admin'])){
   }
   elseif ($command == "del-user") {
     header("Location: ../admin_users.php");
+  }
+  elseif ($command == "del-order") {
+    header("Location: ../admin.php");
   }
   
 } else {

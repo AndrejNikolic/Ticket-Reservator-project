@@ -61,7 +61,7 @@ if (!isset($_SESSION['admin'])) {
                         <td>'.$row["quantity"].'</td>
                         <td>'.$row["quantity_vip"].'</td>
                         <td>'.$fulfill.'</td>
-                        <td><a href="assets/delete_order.php?id='.$row["id_ticket"].'"><i class="fas fa-trash"></i></a></td>
+                        <td><a href="assets/admin_funcs.php?id='.$row["id_ticket"].'&do=del-order"><i class="fas fa-trash"></i></a></td>
                         </tr>';
                         $count++;
                     }
