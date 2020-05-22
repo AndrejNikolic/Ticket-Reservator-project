@@ -15,6 +15,7 @@ $_SESSION['page']="users";
 <?php include "assets/header.php" ?>
     <div class="container my-5">
         <?php include "admin_navigation.php" ?>
+        <div class="table_overflow">
         <table class="table table-hover mt-2 text-center">
             <thead class="thead-light">
                 <tr>
@@ -39,9 +40,9 @@ $_SESSION['page']="users";
                 
                 while($row = mysqli_fetch_assoc($result)) {
                     if ($row["admin"] == 1) {
-                        $admin = '<a class="btn btn-danger btn-sm" href="assets/demote_admin.php?id='.$row["id_user"].'">Demote</a>';
+                        $admin = '<a class="btn btn-danger btn-sm" href="assets/admin_funcs.php?id='.$row["id_user"].'&do=demote">Demote</a>';
                     } else {
-                            $admin = '<a class="btn btn-info btn-sm" href="assets/promote_admin.php?id='.$row["id_user"].'">Promote</a>';
+                            $admin = '<a class="btn btn-info btn-sm" href="assets/admin_funcs.php?id='.$row["id_user"].'&do=promote">Promote</a>';
                     }
                         
                     echo '<tr>
@@ -53,7 +54,7 @@ $_SESSION['page']="users";
                         <td>'.date("d. M Y.", strtotime($row["birthday"])).'</td>
                         <td>'.$row["phone"].'</td>
                         <td>'.$admin.'</td>
-                        <td><a href="assets/delete_user.php?id='.$row["id_user"].'"><i class="fas fa-trash"></i></a></td>
+                        <td><a href="assets/admin_funcs.php?id='.$row["id_user"].'&do=del-user"><i class="fas fa-trash"></i></a></td>
                         </tr>';
                         $count++;
                     }
@@ -62,6 +63,7 @@ $_SESSION['page']="users";
                     ?>
             </tbody>
         </table>
+        </div>
     </div>
 </body>
 </html>

@@ -17,26 +17,29 @@ if (isset($_POST['search'])) {
 ?>
 <div class="top-bar bg-light">
 <div class="container top-bar_items">
-	<div>
-		<?php
-		if(isset($_SESSION['admin'])) {
-			echo '<a class="btn btn-info btn-sm mr-2 text-left" href="admin.php" role="button">Admin Panel</a>';	
-		}
+	<div class="row">
+		<div class="col-md-6">
+			<?php
+			if(isset($_SESSION['admin'])) {
+				echo '<a class="btn btn-info btn-sm mr-2 text-left" href="admin.php" role="button">Admin Panel</a>';
+				echo '<a class="btn btn-info btn-sm mr-2 text-left" href="admin_add_concert.php" role="button">Add Concert</a>';	
+			}
+			?>
+		</div>
+		<div class="col-md-6 text-right">
+		<?php  
+			if(isset($_SESSION['username'])){
+				echo "<span>Welcome, " . $_SESSION['username']."</span>";
+			} else {
+				echo '<a class="btn btn-info btn-sm" href="login.php" role="button">Login / Register</a>';
+			}
+			
 		?>
-	</div>
-	<div class="text-right">
-	<?php  
-		if(isset($_SESSION['username'])){
-			echo "<span>Welcome, " . $_SESSION['username']."</span>";
-		} else {
-			echo '<a class="btn btn-info btn-sm" href="login.php" role="button">Login / Register</a>';
-		}
-		
-	?>
-	<?php  if(isset($_SESSION['username'])) : ?>
-		<a class="btn btn-info btn-sm ml-2" href="edit_profile.php?id=<?php echo $_SESSION['username_id'] ?>" role="button">EDIT</a>
-		<a class="btn btn-danger btn-sm ml-2" href="index.php?logout=1">LOGOUT</a>
-	<?php endif ?>
+		<?php  if(isset($_SESSION['username'])) : ?>
+			<a class="btn btn-info btn-sm ml-2" href="edit_profile.php?id=<?php echo $_SESSION['username_id'] ?>" role="button">EDIT</a>
+			<a class="btn btn-danger btn-sm ml-2" href="index.php?logout=1">LOGOUT</a>
+		<?php endif ?>
+		</div>
 	</div>
 </div>
 </div>

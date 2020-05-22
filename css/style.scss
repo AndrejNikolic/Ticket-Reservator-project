@@ -145,9 +145,6 @@ a {
 .top-bar {
     padding: 5px;
     .top-bar_items {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         span {
             font-size: 16px;
         }
@@ -192,7 +189,7 @@ a {
 /* Admin Panel */
 
 
-#users.tab-pane {
+.table_overflow {
     
     @media screen and (max-width: $breakpoint-tablet){
         overflow-x: scroll;

@@ -24,7 +24,7 @@ $_SESSION['page']="concerts";
                 if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
                     echo ' disabled';
                 }
-                
+
                 echo '">
                 <div class="card-header">
                     <h4 class="card-title text-center">'. $row['title'] .'</h4>
@@ -54,7 +54,7 @@ $_SESSION['page']="concerts";
                             <h5>Administrator:</h5>
                             <div>
                                 <a href="edit_concert.php?id='. $row['id_concert'] .'" class="btn btn-info btn-sm">EDIT</a>
-                                <a href="assets/delete_concert.php?id='. $row['id_concert'] .'" class="btn btn-danger btn-sm">DELETE</a>
+                                <a href="assets/admin_funcs.php?id='. $row['id_concert'] .'&do=del-concert" class="btn btn-danger btn-sm">DELETE</a>
                             </div>
                         </div>';
                 }

@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     $exc_up = $con->prepare($sql_up);
-    $exc_up->bind_param("i", $concert_id);
+    $exc_up->bind_param("i", $id);
     $exc_up->execute();
 
     mysqli_query($con, $exc_up);

@@ -13,9 +13,9 @@
 </head>
 <body>
 <?php include "assets/header.php" ?>
-    <h1>
-        test
-        <span class="test-class">Test file</span>
-    </h1>
+    <div class="container my-5">
+        <h1>Homepage</h1>
+        <p>Here you need to add slider and full description and options of Ticket Reservator</p>
+    </div>
 </body>
 </html>
