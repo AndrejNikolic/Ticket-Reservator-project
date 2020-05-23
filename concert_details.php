@@ -38,7 +38,7 @@
         <p><?php echo $desc; ?></p>
         <div class="row">
           <div class="col-md-6">
-            <div class="order-ticket">
+            <div class="order-ticket ticket">
               <h4>Ticket</h4>
               <h2 class="price">$<?php echo $price_ticket; ?></h2>
               <div class="ticket_quantity">
@@ -49,7 +49,7 @@
                   <button type="button" class="btn btn-outline-secondary btn-plus">+</button>
                 </div>
               </div>
-              <a href="#" class="btn btn-primary btn-lg">ORDER NOW</a>
+              <a href="tickets.php" class="btn btn-primary btn-lg">ORDER NOW</a>
             </div>
           </div>
           <div class="col-md-6">
@@ -64,7 +64,7 @@
                   <button type="button" class="btn btn-outline-secondary btn-plus-vip">+</button>
                 </div>
               </div>
-              <a href="#" class="btn btn-primary btn-lg">ORDER NOW</a>
+              <a href="tickets.php" class="btn btn-primary btn-lg">ORDER NOW</a>
             </div>
           </div>
         </div>

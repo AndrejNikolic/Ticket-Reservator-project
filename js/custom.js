@@ -23,7 +23,10 @@ $(document).ready(function(){
     if (max == 0){
         $(".btn-plus").addClass("disabled");
         $(".qty").addClass("disabled");
-        $(".order-ticket .btn.btn-primary").addClass("disabled");
+        $(".order-ticket.ticket .btn.btn-primary").addClass("disabled");
+    }
+    if (current == 0){
+        $(".order-ticket.ticket .btn.btn-primary").addClass("disabled");
     }
 
     $(".qty").focusout(function(){
@@ -31,10 +34,12 @@ $(document).ready(function(){
 
         if (current > 0) {
             $(".btn-minus").removeClass("disabled");
+            $(".order-ticket.ticket .btn.btn-primary").removeClass("disabled");
         } 
         else {
             $(".btn-minus").addClass("disabled");
             $(".qty").val(0);
+            $(".order-ticket.ticket .btn.btn-primary").addClass("disabled");
         }
 
         if (current > max) {
@@ -53,13 +58,19 @@ $(document).ready(function(){
         if (current > 0) {
             $(".btn-minus").removeClass("disabled");
             $(".qty").val(current - 1);
+            $(".order-ticket.ticket .btn.btn-primary").removeClass("disabled");
         } else {
             $(".btn-minus").addClass("disabled");
+            $(".order-ticket.ticket .btn.btn-primary").addClass("disabled");
+        }
+        if (current == 1){
+            $(".order-ticket.ticket .btn.btn-primary").addClass("disabled");
         }
     });
 
     $(".btn-plus").click(function() {
         $(".btn-minus").removeClass("disabled");
+        $(".order-ticket.ticket .btn.btn-primary").removeClass("disabled");
         current = parseInt($(".qty").val());
 
         if (current >= max) {
@@ -80,16 +91,21 @@ $(document).ready(function(){
         $(".qty-vip").addClass("disabled");
         $(".order-ticket.vip .btn.btn-primary").addClass("disabled");
     }
+    if (current_vip == 0){
+        $(".order-ticket.vip .btn.btn-primary").addClass("disabled");
+    }
 
     $(".qty-vip").focusout(function(){
         current_vip = parseInt($(".qty-vip").val());
 
         if (current_vip > 0) {
             $(".btn-minus-vip").removeClass("disabled");
+            $(".order-ticket.vip .btn.btn-primary").removeClass("disabled");
         } 
         else {
             $(".btn-minus-vip").addClass("disabled");
             $(".qty-vip").val(0);
+            $(".order-ticket.vip .btn.btn-primary").addClass("disabled");
         }
 
         if (current_vip > max_vip) {
@@ -108,13 +124,19 @@ $(document).ready(function(){
         if (current_vip > 0) {
             $(".btn-minus-vip").removeClass("disabled");
             $(".qty-vip").val(current_vip - 1);
+            $(".order-ticket.vip .btn.btn-primary").removeClass("disabled");
         } else {
             $(".btn-minus-vip").addClass("disabled");
+            $(".order-ticket.vip .btn.btn-primary").addClass("disabled");
+        }
+        if (current == 1){
+            $(".order-ticket.vip .btn.btn-primary").addClass("disabled");
         }
     });
 
     $(".btn-plus-vip").click(function() {
         $(".btn-minus-vip").removeClass("disabled");
+        $(".order-ticket.vip .btn.btn-primary").removeClass("disabled");
         current_vip = parseInt($(".qty-vip").val());
 
         if (current_vip >= max_vip) {
