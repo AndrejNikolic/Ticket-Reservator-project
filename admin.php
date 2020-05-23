@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin'])) {
             <tbody>
                 <?php
                 //load users
-                $sql = "SELECT id_ticket, username, first_name, last_name, address, city, title, quantity, quantity_vip, fulfilled FROM ticket INNER JOIN user ON ticket.id_user = user.id_user INNER JOIN concert ON ticket.id_concert = concert.id_concert";
+                $sql = "SELECT id_ticket, username, address, city, zip, country, title, quantity, quantity_vip, fulfilled FROM ticket INNER JOIN user ON ticket.id_user = user.id_user INNER JOIN concert ON ticket.id_concert = concert.id_concert";
                 $result = mysqli_query($con, $sql);
                 $count = 1;
                 $fulfill = "";

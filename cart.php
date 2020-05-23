@@ -26,35 +26,44 @@
 
     echo '<div class="table_overflow">
             <table class="table table-hover mt-2 text-center">
-                <thead class="thead-light">
+                <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Username</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Concert</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">ZIP</th>
-                        <th scope="col">City</th>
-                        <th scope="col">Country</th>
-                        <th scope="col">Qty</th>
-                        <th scope="col">VIP Qty</th>
-                        <th scope="col">Fulfilled?</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Tickets</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">VIP</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Total</th>
                     </tr>
                 </thead>
                 <tbody>';
 
     for($i=0; $i<$max; $i++) {
-
-    echo $_SESSION['cart'][$i]["Concert"];
+    $image = base64_encode($_SESSION['cart'][$i]["Image"]);
+    echo '<tr>
+    <td><img src="data:image/jpeg;base64,'.$image.'" width="150"></td>
+    <td>'.$_SESSION['cart'][$i]["Concert"].'</td>
+    <td>'.$_SESSION['cart'][$i]["Tickets"].'</td>
+    <td>$'.$_SESSION['cart'][$i]["Price"].'</td>
+    <td>'.$_SESSION['cart'][$i]["VIP"].'</td>
+    <td>$'.$_SESSION['cart'][$i]["Price VIP"].'</td>
+    <td>$'.$_SESSION['cart'][$i]["Total"].'</td>
+    </tr>';
 
     }
 
     echo '</tbody>
         </table>';
+
+    ?>    
+    <button type="button" onclick="<?php unset($_SESSION['cart']);?> window.location.reload();" class="btn btn-danger">Remove All</button>
+    <?php
     } else {
-                echo "Your cart is empty!";
+        echo "Your cart is empty!";
     }
     ?>
+    
     </div>
     
 </body>
