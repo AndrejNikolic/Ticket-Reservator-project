@@ -50,8 +50,8 @@ require_once("connect.php");
 
             mysqli_close($con);
         ?>
+        <?php if (isset($_SESSION['error'])) { echo $_SESSION['error']; } ?>
     <div class="row justify-content-center">
-    <h4 class="text-center"><?php $_SESSION['msg'] ?></h4>
         <form class="col-lg-3 col-md-4" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
         <div class="form-group">
             <label for="name">Username:</label>

@@ -24,11 +24,11 @@ if (!isset($_SESSION['admin'])) {
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Username</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">City</th>
                     <th scope="col">Concert</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">ZIP</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Country</th>
                     <th scope="col">Qty</th>
                     <th scope="col">VIP Qty</th>
                     <th scope="col">Fulfilled?</th>
@@ -53,11 +53,11 @@ if (!isset($_SESSION['admin'])) {
                     echo '<tr>
                         <th scope="row">'.$count.'</th>
                         <td>'.$row["username"].'</td>
-                        <td>'.$row["first_name"].'</td>
-                        <td>'.$row["last_name"].'</td>
-                        <td>'.$row["address"].'</td>
-                        <td>'.$row["city"].'</td>
                         <td>'.$row["title"].'</td>
+                        <td>'.$row["address"].'</td>
+                        <td>'.$row["zip"].'</td>
+                        <td>'.$row["city"].'</td>
+                        <td>'.$row["country"].'</td>
                         <td>'.$row["quantity"].'</td>
                         <td>'.$row["quantity_vip"].'</td>
                         <td>'.$fulfill.'</td>

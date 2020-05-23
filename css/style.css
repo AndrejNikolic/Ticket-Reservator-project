@@ -66,6 +66,35 @@ body {
   border-radius: 10px;
 }
 
+.order-ticket .price {
+  position: relative;
+}
+
+.order-ticket .price .sold-out {
+  position: absolute;
+  color: #dc3545;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 999;
+  margin: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+}
+
 .order-ticket .disabled {
   pointer-events: none;
 }

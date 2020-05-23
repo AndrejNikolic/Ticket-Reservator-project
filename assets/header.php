@@ -9,6 +9,8 @@ if (isset($_GET['logout'])) {
   unset($_SESSION['username']);
   unset($_SESSION['username_id']);
   unset($_SESSION['admin']);
+  unset($_SESSION['error']);
+  unset($_SESSION['cart']);
   header("location: index.php");
 }
 if (isset($_POST['search'])) {
@@ -60,6 +62,9 @@ if (isset($_POST['search'])) {
 				</li>
 				<li class="nav-item">
 					<a class="nav-link <?php if($_SESSION['page']=="contact"){ echo "active"; }?>" href="contact.php">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link <?php if($_SESSION['page']=="tickets"){ echo "active"; }?>" href="cart.php">Cart</a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">

@@ -20,6 +20,7 @@
             <li>Login and register</li>
             <li>User and admin</li>
             <li>Search page</li>
+            <li>Custom number inputs for tickets</li>
             <li>Admin panel</li>
             <li>Admin can See orders</li>
             <li>Admin can fulfill and delete orders</li>
@@ -28,7 +29,7 @@
             <li>Edit your profile</li>
             <li>Admin can edit and delete concerts</li>
             <li>can't enter after date ends</li>
-            <li>can't order on 0 tickets left</li>
+            <li>can't order on 0 tickets left - sold out</li>
         </ul>
     </div>
 </body>
