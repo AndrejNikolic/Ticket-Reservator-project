@@ -16,6 +16,20 @@
     <div class="container my-5">
         <h1>Homepage</h1>
         <p>Here you need to add slider and full description and options of Ticket Reservator</p>
+        <ul>
+            <li>Login and register</li>
+            <li>User and admin</li>
+            <li>Search page</li>
+            <li>Admin panel</li>
+            <li>Admin can See orders</li>
+            <li>Admin can fulfill and delete orders</li>
+            <li>Admin can Add new concerts</li>
+            <li>Admin can Promote, demote and delete users</li>
+            <li>Edit your profile</li>
+            <li>Admin can edit and delete concerts</li>
+            <li>can't enter after date ends</li>
+            <li>can't order on 0 tickets left</li>
+        </ul>
     </div>
 </body>
 </html>

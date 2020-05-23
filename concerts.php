@@ -13,13 +13,13 @@ $_SESSION['page']="concerts";
 <body>
     <?php include "assets/header.php" ?>  
     <div class="container my-5">
-        <div class="card-columns">
+        <div class="row row-cols-1 row-cols-md-3">
         <?php 
             $sql = "SELECT * FROM concert ORDER BY start_date ASC";
             $result = mysqli_query($con, $sql);
 
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="card';
+                echo '<div class="col mb-4"><div class="card';
 
                 if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
                     echo ' disabled';
@@ -33,7 +33,7 @@ $_SESSION['page']="concerts";
                 
                 <div class="card-body concert_datetime">
                     <h5>'.date("d. M Y.", strtotime($row['start_date'])).'</h5>/
-                    <h5>'.date("H:m", strtotime($row['start_date'])).'</h5>
+                    <h5>'.date("H:i", strtotime($row['start_date'])).'</h5>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><span class="price">$'.$row['price_ticket'].'</span><span> '.$row['num_ticket'].' tickets</span></li>
@@ -58,7 +58,7 @@ $_SESSION['page']="concerts";
                             </div>
                         </div>';
                 }
-                echo    '</div>';
+                echo    '</div></div>';
             }
         ?>
         </div>

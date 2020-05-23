@@ -72,7 +72,7 @@ if (!isset($_SESSION['admin'])) {
                     </div>
                     <div class="form-group">
                         <label for="description">Description <span class="red">*</span></label>
-                        <textarea name="description" class="form-control" id="" cols="30" rows="6"><?php echo $description; ?></textarea>
+                        <textarea name="description" class="form-control" cols="30" rows="6" required><?php echo $description; ?></textarea>
                     </div>
                 </div>
             </div>

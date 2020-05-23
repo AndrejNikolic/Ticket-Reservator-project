@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="col-md-6">
             <div class="form-group">
                 <label for="start_date">Start Date and Time <span class="red">*</span></label>
-                <input type="datetime-local" class="form-control" name="start_date" value="<?php echo date('Y-m-d\TH:m', strtotime($concert_start_date))?>" required>
+                <input type="datetime-local" class="form-control" name="start_date" value="<?php echo date('Y-m-d\TH:i', strtotime($concert_start_date))?>" required>
             </div>
             <div class="form-group">
                 <label for="title">Title <span class="red">*</span></label>

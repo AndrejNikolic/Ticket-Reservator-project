@@ -78,7 +78,7 @@ $(document).ready(function(){
     if (max_vip == 0){
         $(".btn-plus-vip").addClass("disabled");
         $(".qty-vip").addClass("disabled");
-        $(".order-ticket.vip .btn.btn-info").addClass("disabled");
+        $(".order-ticket.vip .btn.btn-primary").addClass("disabled");
     }
 
     $(".qty-vip").focusout(function(){

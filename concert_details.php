@@ -64,7 +64,7 @@
                   <button type="button" class="btn btn-outline-secondary btn-plus-vip">+</button>
                 </div>
               </div>
-              <a href="#" class="btn btn-info btn-lg">ORDER NOW</a>
+              <a href="#" class="btn btn-primary btn-lg">ORDER NOW</a>
             </div>
           </div>
         </div>
