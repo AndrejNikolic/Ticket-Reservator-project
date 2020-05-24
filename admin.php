@@ -45,7 +45,7 @@ if (!isset($_SESSION['admin'])) {
                 
                 while($row = mysqli_fetch_assoc($result)) {
                     if ($row["fulfilled"] == 0) {
-                        $fulfill = '<a class="btn btn-danger btn-sm" href="assets/fulfill_order.php?id='.$row["id_ticket"].'">Fulfill</a>';
+                        $fulfill = '<a class="btn btn-danger btn-sm" href="assets/admin_funcs.php?id='.$row["id_ticket"].'&do=fulfill">Fulfill</a>';
                     } else {
                         $fulfill = '<span class="btn btn-success btn-sm" style="pointer-events:none">Fulfilled</span>';
                     }

@@ -39,7 +39,7 @@
             $vipPrice = 0;
           }
           $price = $ticketPrice + $vipPrice;
-          $item = array("Concert"=>"$title", "Image"=>"$image", "Tickets"=>$_POST["ticket_qty"] , "Price"=>$price_ticket,"VIP"=>$_POST["vip_qty"], "Price VIP"=>$price_vip, "Total"=>$price);
+          $item = array("ConcertID"=>"$id", "Concert"=>"$title", "Image"=>"$image", "Tickets"=>$_POST["ticket_qty"] , "Price"=>$price_ticket,"VIP"=>$_POST["vip_qty"], "Price VIP"=>$price_vip, "Total"=>$price);
           if (isset($_SESSION['cart'])) {
             array_push($_SESSION['cart'],$item);
           }else {

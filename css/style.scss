@@ -106,6 +106,20 @@ body {
     }
 }
 
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total-price {
+    th {
+        font-size: 18px;
+        &:last-child {
+            font-weight: 800;
+        }
+    }
+}
+
 .table th, .table td {
     vertical-align: middle;
 }
