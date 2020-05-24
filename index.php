@@ -29,7 +29,10 @@
             <li>Edit your profile</li>
             <li>Admin can edit and delete concerts</li>
             <li>can't enter after date ends</li>
-            <li>can't order on 0 tickets left - sold out</li>
+            <li>tickets left counter and can't order on 0 tickets left - sold out</li>
+            <li>Cart with checkout</li>
+            <li>Thank you page with order details</li>
+            <li>Responsive</li>
         </ul>
     </div>
 </body>

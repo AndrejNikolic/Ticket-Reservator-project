@@ -27,7 +27,7 @@
                 if (@$_REQUEST["clear"]=="yes")
                 {
                     unset($_SESSION['cart']);
-                    header('Location: '.$_SERVER['PHP_SELF']);
+                    header('location: '.$_SERVER['PHP_SELF']);
                 }
             ?>
             <?php endif ?>
@@ -71,35 +71,11 @@
         </table>';
 
     $address = $city = $zip = $country = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $user = $_SESSION['username_id'];
-        $address = $_POST["address"];
-        $city = $_POST["city"];
-        $zip = $_POST["zip"];
-        $country = $_POST["country"];
-
-
-        for($i=0; $i<$max; $i++) {
-            $id_concert = $_SESSION['cart'][$i]["ConcertID"];
-            $quantity = $_SESSION['cart'][$i]["Tickets"];
-            $quantity_vip = $_SESSION['cart'][$i]["VIP"];
-            $sql = "INSERT INTO ticket (id_concert, id_user, address, zip, city, country, quantity, quantity_vip) VALUES ('$id_concert', '$user', '$address', '$zip', '$city', '$country', '$quantity', '$quantity_vip')";
-            
-            if (mysqli_query($con, $sql)) {
-               echo "Thank you for your order";
-            } else {
-                echo "Error: " . mysqli_error($con);
-            }
-            
-        }
-        //header("location: index.php");
-    }
-
     ?>    
+
     <h3 class="text-center mt-5">Deliver tickets to:</h3>
     <div class="row justify-content-center">
-    <form class="col-md-5" action="" method="post">
+    <form class="col-md-5" action="thank_you.php" method="post">
     <div class="form-group">
         <label for="address">Address: <span class="red">*</span></label>
         <input type="text" class="form-control" name="address" value="<?php echo $address; ?>" required>

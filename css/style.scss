@@ -180,8 +180,30 @@ body {
 
 .navbar-nav {
     .nav-link {
+        &.cart {
+            font-size: 28px !important;
+            padding: 0 10px;
+            position: relative;
+            i {
+                transform: rotate(8deg);
+            }
+            .items-cart {
+                font-size: 14px;
+                background-color: #c82333;
+                font-weight: 400;
+                padding: 1px 7px;
+                border-radius: 50%;
+                position: absolute;
+                top: -5px;
+                left: 35px;
+            }
+        }
         &.active {
-            text-shadow: 1px 1px 5px #000;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+            .items-cart {
+                background-color: #dc3545;
+            }
         }
     }
 }

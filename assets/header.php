@@ -1,9 +1,4 @@
 <?php
-//if (!isset($_SESSION['username'])) {
-  //$_SESSION['msg'] = "You must log in first";
-  //header('location: login.php');
-//} else { $_SESSION['msg'] = ""; }
-
 if (isset($_GET['logout'])) {
   session_destroy();
   unset($_SESSION['username']);
@@ -64,7 +59,13 @@ if (isset($_POST['search'])) {
 					<a class="nav-link <?php if($_SESSION['page']=="contact"){ echo "active"; }?>" href="contact.php">Contact</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link <?php if($_SESSION['page']=="tickets"){ echo "active"; }?>" href="cart.php">Cart</a>
+					<a class="nav-link cart <?php if($_SESSION['page']=="tickets"){ echo "active"; }?>" href="cart.php" title="Tickets"><i class="fas fa-ticket-alt"></i>
+					<?php 
+						if (isset($_SESSION['cart'])) {
+							echo '<span class="items-cart">'.sizeof($_SESSION['cart']).'</span>';
+						}
+					?>
+					</a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
