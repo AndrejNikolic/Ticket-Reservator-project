@@ -1,9 +1,37 @@
+@font-face {
+  font-family: Font Awesome\ 5 Brands;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.eot);
+  src: url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.woff) format("woff"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-brands-400.svg#fontawesome) format("svg");
+}
+
+@font-face {
+  font-family: Font Awesome\ 5 Free;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-regular-400.eot);
+  src: url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-regular-400.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-regular-400.woff) format("woff"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-regular-400.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-regular-400.svg#fontawesome) format("svg");
+}
+
+@font-face {
+  font-family: Font Awesome\ 5 Free;
+  font-style: normal;
+  font-weight: 900;
+  src: url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-solid-900.eot);
+  src: url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-solid-900.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-solid-900.woff) format("woff"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-solid-900.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v5.0.6/webfonts/fa-solid-900.svg#fontawesome) format("svg");
+}
+
 /* Bootstrap fixes */
 body {
   font-family: 'Nunito', sans-serif;
 }
 
-.container.my-5 h3 {
+main {
+  min-height: calc(100vh - 222px);
+}
+
+.container.my-5 h3, .container.py-5 h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,7 +48,7 @@ body {
   margin: 0 auto;
 }
 
-.container.my-5 h3::after {
+.container.my-5 h3::after, .container.py-5 h3::after {
   border-top: 2px solid #215ea4;
   content: "";
   display: block;
@@ -29,7 +57,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.container.my-5 h3.h3_fix {
+.container.my-5 h3.h3_fix, .container.py-5 h3.h3_fix {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -37,12 +65,12 @@ body {
   font-size: 1.60rem;
 }
 
-.container.my-5 h3.h3_fix::after {
+.container.my-5 h3.h3_fix::after, .container.py-5 h3.h3_fix::after {
   border-top: none;
   margin-top: 0;
 }
 
-.container.my-5.concert h1 {
+.container.my-5.concert h1, .container.py-5.concert h1 {
   margin-bottom: 2rem;
 }
 
@@ -278,6 +306,18 @@ body {
   background-color: #17a2b8;
 }
 
+.footer-nav .nav-item .nav-link {
+  padding: 0 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6c747d;
+}
+
+.footer-nav .nav-item .nav-link.active {
+  color: #dfdfe0;
+  font-weight: 800;
+}
+
 a {
   color: #17a2b8;
 }
@@ -375,6 +415,10 @@ a:hover {
 .navbar .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   font-size: 17px;
+}
+
+.fa, .fas {
+  font-weight: 600;
 }
 
 /* Admin Panel */

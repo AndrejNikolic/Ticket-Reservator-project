@@ -14,6 +14,7 @@ $idItem = $_GET["id"];
 </head>
 <body>
 <?php include "assets/header.php" ?>
+<main>
 <div class="container my-5">
 <?php if (isset($_SESSION['admin'])) { include "admin_navigation.php"; } ?>
 <div class="row justify-content-center">
@@ -101,6 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 </div>
 </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>
 

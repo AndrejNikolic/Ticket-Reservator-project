@@ -18,6 +18,7 @@
 </head>
 <body>
 <?php include "assets/header.php" ?>
+<main>
     <div class="container my-5">
         <div class="cart-header">
             <h1>Tickets</h1>
@@ -107,6 +108,7 @@
     ?>
     
     </div>
-    
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

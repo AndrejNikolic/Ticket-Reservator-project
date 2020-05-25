@@ -11,6 +11,7 @@ require_once("connect.php");
 </head>
 <body>
     <?php include "assets/header.php" ?>
+<main>
     <div class="container my-5">
         
         <?php
@@ -68,5 +69,8 @@ require_once("connect.php");
         </div>
 
     </div>
+    
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

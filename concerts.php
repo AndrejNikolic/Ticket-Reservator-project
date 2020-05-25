@@ -11,7 +11,8 @@ $_SESSION['page']="concerts";
     <title>Concerts</title>
 </head>
 <body>
-    <?php include "assets/header.php" ?>  
+<?php include "assets/header.php" ?>  
+<main>
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-md-3">
         <?php 
@@ -63,5 +64,7 @@ $_SESSION['page']="concerts";
         ?>
         </div>
     </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

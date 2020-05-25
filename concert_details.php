@@ -11,7 +11,8 @@
     <title>Concert</title>
 </head>
 <body>
-  <?php include "assets/header.php" ?>
+<?php include "assets/header.php" ?>
+<main>
   <div class="container my-5 concert">
     <div class="row">
       <?php
@@ -111,5 +112,7 @@
       </div>
     </div>
   </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

@@ -13,6 +13,7 @@ $idItem = $_GET["id"];
 </head>
 <body>
 <?php include "assets/header.php" ?>
+<main>
 <div class="container my-5">
 <h3>Edit Concert</h3>
 <div class="row justify-content-center">
@@ -125,6 +126,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </form>
 </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>
 

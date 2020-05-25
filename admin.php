@@ -15,7 +15,8 @@ if (!isset($_SESSION['admin'])) {
     <title>Admin</title>
 </head>
 <body>
-<?php include "assets/header.php" ?>    
+<?php include "assets/header.php" ?>
+<main>
     <div class="container my-5">
         <?php include "admin_navigation.php" ?>
         <div class="table_overflow">
@@ -72,5 +73,7 @@ if (!isset($_SESSION['admin'])) {
         </table>
                 </div>
     </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

@@ -13,6 +13,7 @@ $_SESSION['page']="users";
 </head>
 <body>
 <?php include "assets/header.php" ?>
+<main>
     <div class="container my-5">
         <?php include "admin_navigation.php" ?>
         <div class="table_overflow">
@@ -65,5 +66,7 @@ $_SESSION['page']="users";
         </table>
         </div>
     </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

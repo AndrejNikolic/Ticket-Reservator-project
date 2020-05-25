@@ -16,7 +16,8 @@ if (!isset($_SESSION['admin'])) {
     <title>Add Concert - Admin</title>
 </head>
 <body>
-    <?php include "assets/header.php" ?>
+<?php include "assets/header.php" ?>
+<main>
     <div class="container my-5">
     <?php include "admin_navigation.php"; ?>
     <?php $title = $description = $num_ticket = $price_ticket = $num_vip = $price_vip = $start_date = "";
@@ -113,5 +114,7 @@ if (!isset($_SESSION['admin'])) {
             </div>
         </form>
     </div>
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>

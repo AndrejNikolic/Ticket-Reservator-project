@@ -10,6 +10,7 @@ require_once("connect.php");
   </head>
   <body>
   <?php include "assets/header.php" ?>
+  <main>
     <div class="container my-5">
         <div class="row justify-content-center">
             <form  class="col-lg-4 col-md-5" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
@@ -107,5 +108,8 @@ require_once("connect.php");
             </form>
         </div>
     </div>
+    
+  </main>
+  <?php include "assets/footer.php" ?>
   </body>
 </html>

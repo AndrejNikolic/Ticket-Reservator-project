@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php include "assets/header.php" ?>
+<main>
     <div class="container my-5">
         <h3 class="text-center">Searching for <?php echo $_SESSION['search_term']; ?></h3>
         <ul class="list-unstyled">
@@ -23,9 +24,15 @@
               echo '<li class="media my-4">
                         <img src="data:image/jpeg;base64,'.base64_encode( $row["image"] ).'" class="align-self-center mr-3">
                         <div class="row media-body">
-                            <div class="col-md-8"><h5 class="mt-0 mb-1">'.$row["title"].' ( '.date("d. M Y. H:m", strtotime($row['start_date'])).' )</h5><span class="desc">'.$row["description"].'</span></div>
+                            <div class="col-md-8"><h5 class="mt-0 mb-1">'.$row["title"].' ( '.date("d. M Y. H:i", strtotime($row['start_date'])).' )</h5><span class="desc">'.$row["description"].'</span></div>
                             <div class="col-md-2 prices"><span>$'.$row["price_ticket"].'</span><span>VIP $'.$row["price_vip"].'</span></div>
-                            <div class="col-md-2 prices"><a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block">RESERVE TICKETS</a></div>
+                            <div class="col-md-2 prices"><a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary btn-block ';
+
+                            if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
+                                echo ' disabled';
+                            }
+            
+                            echo '">RESERVE TICKETS</a></div>
                         </div>
                     </li>';
             }
@@ -36,5 +43,8 @@
         ?>
         </ul>
     </div>
+    
+</main>
+<?php include "assets/footer.php" ?>
 </body>
 </html>
