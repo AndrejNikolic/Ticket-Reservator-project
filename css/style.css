@@ -439,4 +439,10 @@ a:hover {
 .concert_image img {
   width: 100%;
 }
+
+.concert .main-img {
+  border-radius: 10px;
+  -webkit-box-shadow: -1px -1px 10px 0px rgba(52, 58, 64, 0.15);
+          box-shadow: -1px -1px 10px 0px rgba(52, 58, 64, 0.15);
+}
 /*# sourceMappingURL=style.css.map */

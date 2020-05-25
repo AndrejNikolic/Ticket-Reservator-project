@@ -120,6 +120,28 @@
         </div>
         </div>
     </div>
+    <div class="conatainer-fluid bg-light">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <img class="img-fluid" src="img/admin-02.png" alt="">
+                </div>
+                <div class="col-md-5 align-self-center">
+                    <h3>Admin Panel</h3>
+                    <p>Admin panel allows administrator to <b>see</b>, <b>delete</b> and <b>fulfill orders</b> when tickets are sent to customer.</p>
+                    <p>In admin menu he can also:
+                        <ul>
+                            <li>Add new concert</li>
+                            <li>See all users</li>
+                            <li>Delete users</li>
+                            <li><b>Promote/Demote</b> users to/from administrator</li>
+                            <li>Edit his own account</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <?php include "assets/footer.php" ?>
 </body>

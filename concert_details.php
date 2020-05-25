@@ -50,7 +50,7 @@
       ?>
       <div class="col-md-6">
         <h1 class="text-right"><?php echo $title; ?></h1>
-        <img class="img-fluid" src="data:image/jpeg;base64,<?php echo base64_encode( $image ); ?>" alt="">
+        <img class="img-fluid main-img" src="data:image/jpeg;base64,<?php echo base64_encode( $image ); ?>" alt="">
       </div>
       <div class="col-md-6">
         <h3 class="h3_fix">
