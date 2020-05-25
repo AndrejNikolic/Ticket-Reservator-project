@@ -14,6 +14,7 @@
 <body>
 <?php include "assets/header.php" ?>
 <main>
+<div class="conatainer-fluid bg-light">
     <div class="container">
         <div id="slider" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -23,18 +24,33 @@
                 <li data-target="#slider" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="img/pearl-jam.jpg" class="d-block w-100" >
-                </div>
-                <div class="carousel-item">
-                <img src="img/korn.jpg" class="d-block w-100" >
-                </div>
-                <div class="carousel-item">
-                <img src="img/RHCP.jpg" class="d-block w-100" >
-                </div>
-                <div class="carousel-item">
-                <img src="img/tool.jpg" class="d-block w-100" >
-                </div>
+                <?php 
+                    $sql = "SELECT * FROM concert WHERE start_date > NOW() ORDER BY start_date ASC LIMIT 4";
+                    $result = mysqli_query($con, $sql);
+                    $first = 0;
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        if ($first == 0) {
+                            echo '<div class="carousel-item active">
+                                <img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" class="d-block w-100" >
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h4>'. $row['title'] .' / '.date("d. M Y.", strtotime($row['start_date'])).' / '.date("H:i", strtotime($row['start_date'])).'</h5>
+                                    <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary">RESERVE TICKETS</a>
+                                </div>
+                            </div>';
+                            $first++;
+                        } else {
+                            echo '<div class="carousel-item">
+                                <img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" class="d-block w-100" >
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h4>'. $row['title'] .' / '.date("d. M Y.", strtotime($row['start_date'])).' / '.date("H:i", strtotime($row['start_date'])).'</h5>
+                                    <a href="concert_details.php?id='. $row['id_concert'] .'" class="btn btn-primary">RESERVE TICKETS</a>
+                                </div>
+                            </div>';
+                        }
+                        
+                    }
+                ?>
             </div>
             <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,6 +62,7 @@
             </a>
         </div>
     </div>
+</div>
     <div class="container py-5">
         <div class="row">
             <div class="col-md-4 align-self-center">

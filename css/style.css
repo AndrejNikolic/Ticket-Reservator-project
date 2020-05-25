@@ -366,6 +366,20 @@ a:hover {
   -webkit-box-orient: vertical;
 }
 
+.carousel-inner .carousel-item .carousel-caption {
+  background: rgba(52, 58, 64, 0.7);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px 40px 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.carousel-inner .carousel-item .carousel-caption .btn {
+  margin-top: 8px;
+}
+
 /* HEADER */
 .top-bar {
   padding: 5px;
