@@ -1,3 +1,3 @@
-# Ticket-Reservator-project
+# Ticket Reservator - project
 
 ![](img/Ticket-Reservator-project.jpg)
