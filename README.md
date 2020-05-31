@@ -1,4 +1,4 @@
-# Ticket Reservator - project
+# Ticket Reservator - project in PHP
 
 database: db/reservator.sql
 
