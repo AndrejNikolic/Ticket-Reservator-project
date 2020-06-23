@@ -26,13 +26,13 @@ require_once("connect.php");
             $password = md5($pass);
 
             $sql = "SELECT id_user, admin FROM user WHERE username='$username' AND password='$password'";
-            $test_user = mysqli_query($con, $sql);
+            $test_user = $con->query($sql);
 
             $exc = $con->prepare($sql);
             $exc->execute();
             $exc->bind_result($id_user, $admin);
 
-            if (mysqli_num_rows($test_user) == 1) {
+            if ($test_user->num_rows == 1) {
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "Welcome";
 
@@ -49,7 +49,7 @@ require_once("connect.php");
             }
             }
 
-            mysqli_close($con);
+            $con->close();
         ?>
         <?php if (isset($_SESSION['error'])) { echo $_SESSION['error']; } ?>
     <div class="row justify-content-center">

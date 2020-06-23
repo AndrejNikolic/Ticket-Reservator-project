@@ -19,8 +19,8 @@
         $search_term = $_SESSION['search_term'];
         $sql_search = "SELECT * FROM concert WHERE description LIKE '%$search_term%' OR title LIKE '%$search_term%' OR start_date LIKE '%$search_term%'";
 
-        if($exc = mysqli_query($con, $sql_search)) {
-            while ($row = mysqli_fetch_assoc($exc)) {
+        if($exc = $con->query($sql_search)) {
+            while ($row = $exc->fetch_assoc()) {
               echo '<li class="media my-4">
                         <img src="data:image/jpeg;base64,'.base64_encode( $row["image"] ).'" class="align-self-center mr-3">
                         <div class="row media-body">
@@ -38,7 +38,7 @@
             }
         }
 
-        mysqli_close($con);
+        $con->close();
         
         ?>
         </ul>

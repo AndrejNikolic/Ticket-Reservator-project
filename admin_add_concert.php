@@ -40,16 +40,16 @@ if (!isset($_SESSION['admin'])) {
 
             $sql = "INSERT INTO concert (title, description, num_ticket, price_ticket, num_vip, price_vip, image, start_date) 
             VALUES ('$title', '$description', '$num_ticket', '$price_ticket', '$num_vip', '$price_vip', '$image', '$start_date')";
-            $exc = mysqli_query($con, $sql);
+            $exc = $con->query($sql);
         
             if ($exc) {
                 header("location: concerts.php");
             }
             else {
-                echo "Error: " . mysqli_error($con);
+                echo "Error: " . $con->error($con);
             }
 
-            mysqli_close($con);
+            $con->close($con);
         }
         ?>
         <form class="col-12" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">

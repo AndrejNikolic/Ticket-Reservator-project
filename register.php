@@ -28,12 +28,12 @@ require_once("connect.php");
                 $pass2 = $_POST["pass2"];
 
                 $user = "SELECT * FROM user WHERE username='$username' OR email='$email'";
-                $test_user = mysqli_query($con, $user);
+                $test_user = $con->query($user);
 
                 if ($pass1 != $pass2) {
                 echo "<div class='alert alert-danger' role='alert'>ERROR: Not matching passwords!</div>";
                 }
-                else if (mysqli_num_rows($test_user)>=1) {
+                else if ($test_user->num_rows>=1) {
                 echo "<div class='alert alert-danger' role='alert'>ERROR: Username or email already exists!</div>";
                 }
                 else {
@@ -41,7 +41,7 @@ require_once("connect.php");
                 $password = md5($pass1);
 
                 $sql = "INSERT INTO user (username, first_name, last_name, birthday, phone, email, password) VALUES ('$username', '$fname', '$lname', '$bday', '$phone', '$email', '$password')";
-                $exc = mysqli_query($con, $sql);
+                $exc = $con->query($sql);
 
                 if ($exc) {
                     echo "User successfully registered!";

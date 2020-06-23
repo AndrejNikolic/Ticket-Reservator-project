@@ -35,11 +35,11 @@ $_SESSION['page']="users";
                 <?php
                 //load users
                 $sql = "SELECT id_user, username, first_name, last_name, email, birthday, phone, admin FROM user";
-                $result = mysqli_query($con, $sql);
+                $result = $con->query($sql);
                 $count = 1;
                 $admin = "";
                 
-                while($row = mysqli_fetch_assoc($result)) {
+                while($row = $result->fetch_assoc()) {
                     if ($row["admin"] == 1) {
                         $admin = '<a class="btn btn-danger btn-sm" href="assets/admin_funcs.php?id='.$row["id_user"].'&do=demote">Demote</a>';
                     } else {
@@ -60,7 +60,7 @@ $_SESSION['page']="users";
                         $count++;
                     }
                     
-                    mysqli_close($con);
+                    $con->close($con);
                     ?>
             </tbody>
         </table>

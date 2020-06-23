@@ -17,9 +17,9 @@ $_SESSION['page']="concerts";
         <div class="row row-cols-1 row-cols-md-3">
         <?php 
             $sql = "SELECT * FROM concert ORDER BY start_date ASC";
-            $result = mysqli_query($con, $sql);
+            $result = $con->query($sql);
 
-            while ($row = mysqli_fetch_assoc($result)) {
+            while ($row = $result->fetch_assoc()) {
                 echo '<div class="col mb-4"><div class="card';
 
                 if (date("Y-m-d", strtotime($row['start_date'])) <= date("Y-m-d")) {
@@ -61,6 +61,7 @@ $_SESSION['page']="concerts";
                 }
                 echo    '</div></div>';
             }
+            $con->close();
         ?>
         </div>
     </div>

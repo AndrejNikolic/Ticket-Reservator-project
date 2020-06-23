@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $exc_up->execute();
     
 
-    mysqli_query($con, $exc_up);
+    $con->query($exc_up);
     header("location: concerts.php");
 
-    mysqli_close($con);
+    $con->close();
 }
 ?>
 <form class="col-12" method="post" enctype="multipart/form-data">

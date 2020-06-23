@@ -4,9 +4,10 @@ $username = "root";
 $password = "";
 $dbname = "reservator";
 
-  $con = mysqli_connect($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);
 
-  if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
+  if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+    exit();
   }
 ?>

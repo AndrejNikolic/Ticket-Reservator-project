@@ -40,11 +40,11 @@ if (!isset($_SESSION['admin'])) {
                 <?php
                 //load users
                 $sql = "SELECT id_ticket, username, address, city, zip, country, title, quantity, quantity_vip, fulfilled FROM ticket INNER JOIN user ON ticket.id_user = user.id_user INNER JOIN concert ON ticket.id_concert = concert.id_concert";
-                $result = mysqli_query($con, $sql);
+                $result = $con->query($sql);
                 $count = 1;
                 $fulfill = "";
                 
-                while($row = mysqli_fetch_assoc($result)) {
+                while($row = $result->fetch_assoc()) {
                     if ($row["fulfilled"] == 0) {
                         $fulfill = '<a class="btn btn-danger btn-sm" href="assets/admin_funcs.php?id='.$row["id_ticket"].'&do=fulfill">Fulfill</a>';
                     } else {
@@ -67,7 +67,7 @@ if (!isset($_SESSION['admin'])) {
                         $count++;
                     }
                     
-                    mysqli_close($con);
+                    $con->close($con);
                     ?>
             </tbody>
         </table>

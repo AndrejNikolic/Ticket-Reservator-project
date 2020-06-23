@@ -46,10 +46,10 @@ require_once("connect.php");
                 $quantity_vip = $_SESSION['cart'][$i]["VIP"];
                 $sql = "INSERT INTO ticket (id_concert, id_user, address, zip, city, country, quantity, quantity_vip) VALUES ('$id_concert', '$user', '$address', '$zip', '$city', '$country', '$quantity', '$quantity_vip')";
                     
-                if (mysqli_query($con, $sql)) {
+                if ($con->query($sql)) {
                     echo $_SESSION['cart'][$i]["Concert"].' / '.$_SESSION['cart'][$i]["Tickets"].' x Ticket / '.$_SESSION['cart'][$i]["VIP"].' x VIP<br>';
                 } else {
-                    echo "Error: " . mysqli_error($con);
+                    echo "Error: " . $con->error();
                 }
             }
 

@@ -26,10 +26,10 @@
             <div class="carousel-inner">
                 <?php 
                     $sql = "SELECT * FROM concert WHERE start_date > NOW() ORDER BY start_date ASC LIMIT 4";
-                    $result = mysqli_query($con, $sql);
+                    $result = $con->query($sql);
                     $first = 0;
 
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = $result->fetch_assoc()) {
                         if ($first == 0) {
                             echo '<div class="carousel-item active">
                                 <img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" class="d-block w-100" >

@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $exc_pass->bind_param("i", $idItem);
         $exc_pass->execute();
 
-        mysqli_query($con, $sql_pass);
+        $con->query($sql_pass);
     }
 
     $sql_up = "UPDATE user SET first_name='$fname', last_name='$lname', email='$email', birthday='$bday', phone='$phone' WHERE id_user=?";
@@ -60,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $exc->bind_param("i", $idItem);
     $exc->execute();
 
-    mysqli_query($con, $sql_up);
+    $con->query($sql_up);
 
     header("location: admin.php");
     }
-    mysqli_close($con);
+    $con->close();
 
 ?>
 <form  class="col-lg-4 col-md-5" method="POST">

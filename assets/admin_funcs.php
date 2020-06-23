@@ -28,9 +28,9 @@ if (isset($_SESSION['admin'])){
   $exc->bind_param("i", $idItem);
   $exc->execute();
 
-  mysqli_query($con, $sql);
+  $con->query($sql);
 
-  mysqli_close($con);
+  $con->close();
 
   if ($command == "fulfill"){
     header("Location: ../admin.php");
