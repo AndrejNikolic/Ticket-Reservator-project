@@ -60,7 +60,7 @@ $_SESSION['page']="users";
                         $count++;
                     }
                     
-                    $con->close($con);
+                    $con->close();
                     ?>
             </tbody>
         </table>
